@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt & Anfrage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <header>
+    <div class="header-container">
+        <img src="media/AFLogo.png" alt="Firmenlogo" class="logo">
+        <!-- NEU: Checkbox zum Steuern des Menüs (unsichtbar) -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <!-- NEU: Das Burger-Icon (ist das Label für die Checkbox) -->
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+  <nav class="navbar">
+            <ul>
+						<li><a href="index.html">Startseite</a></li>
+                <li><a href="#ueber-uns.html">Über Uns</a></li>  
+            </ul>
+        </nav>
+    </div>
+        <div class="hero-section">
+            <h1>Deine Anfrage</h1>
+            <p>Bitte vervollständige deine Angaben. Wir melden uns in Kürze bei dir.</p>
+        </div>
+    </header>	
+	<main>
+    <!-- NEU: Die ID "auswahl-sektion" umschließt den gesamten Block -->
+    <section id="auswahl-sektion">
+        <h2>Deine Auswahl</h2>
+        <div id="auswahl-zusammenfassung" class="auswahl-box">
+            <p>Lade Auswahl...</p>
+        </div>
+    </section>
+
+    <section id="kontakt-form-section">
+        <!-- Dieser Teil bleibt unverändert -->
+        <h2>Deine Kontaktdaten</h2>
+        <form id="kontakt-form">
+            <div class="form-group">
+                <label for="name">Dein Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Deine E-Mail-Adresse</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Deine Telefonnummer (optional)</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="nachricht">Deine Nachricht (optional)</label>
+                <textarea id="nachricht" name="nachricht" rows="5"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-button">Anfrage absenden</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h4>Auditfox</h4>
+            <p>Gartenstraße 1, 91486 Uehlfeld</p>
+      </div>
+      <div class="footer-column">
+          <h4>Navigation</h4>
+          <ul>
+                <li><a href="#konfigurator">Konfigurator</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+                <li><a href="datenschutz.html">Datenschutz</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Kontakt</h4>
+            
+<p><b>E-Mail:</b>
+ <a href="mailto:auditfox@gmail.com">auditfox@gmail.com</a> 
+</br> 
+     <b>Telefon:</b> 0123 / 456 789
+   </p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Auditfox</p>
+    </div>
+</footer>
+
+    <!-- NEU: Ein eigenes JavaScript für diese Seite -->
+    <script src="kontakt.js"></script>
+</body>
+</html>

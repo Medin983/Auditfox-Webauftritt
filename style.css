@@ -1,0 +1,431 @@
+/* Import einer modernen, gut lesbaren Schriftart von Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap' );
+
+:root {
+    --primary-color: #136DB0; /* Ein sattes Handwerksblau */
+    --secondary-color: #EC7C3B; /* Ein warmes, auffälliges Gelb/Orange */
+    --background-color: #F8F9FA; /* Ein sehr helles Grau */
+    --text-color: #343A40; /* Dunkelgrau statt reinem Schwarz */
+    --light-gray: #E9ECEF;
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Neue Schriftart */
+    line-height: 1.7;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header p {
+    font-weight: 300;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+    font-weight: 600;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--light-gray);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* Styling für die Auswahl-Optionen */
+.option {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+.option:hover {
+    border-color: var(--primary-color);
+    background-color: #fcfdff;
+}
+
+.option label {
+    margin-left: 15px;
+    font-size: 1.1em;
+    flex-grow: 1; /* Label nimmt den verfügbaren Platz ein */
+}
+
+/* NEU: Styling für die Preisschilder */
+.price-tag {
+    font-weight: 600;
+    color: var(--primary-color);
+    background-color: #e7f0f7;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+input[type="checkbox"] {
+    /* Größere, modernere Checkboxen */
+    width: 22px;
+    height: 22px;
+    accent-color: var(--primary-color);
+}
+
+/* Styling für die Zusammenfassung */
+#zusammenfassung {
+    margin-top: 40px;
+}
+
+#ausgewaehlte-optionen {
+    list-style-type: '✓ '; /* Modernes Häkchen als Listenpunkt */
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+#ausgewaehlte-optionen li {
+    padding: 5px 0;
+}
+
+/* NEU: Layout für die Kostenübersicht */
+.kosten-uebersicht {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    padding: 20px;
+    border-top: 3px solid var(--primary-color);
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.total span {
+    color: var(--primary-color);
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.3em;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.02); /* Leichter Zoom-Effekt beim Hover */
+}
+
+.header-container {
+    display: flex;                
+    justify-content: space-between;
+    align-items: center;          
+    max-width: 1200px;             
+    margin: 0 auto;               
+    padding: 10px 20px;           
+}
+
+.logo {
+    max-width: 220px; 
+    margin-bottom: 0;  
+}
+
+.navbar ul {
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    display: flex;    
+}
+
+.navbar li {
+    margin-left: 25px; 
+}
+
+.navbar a {
+    text-decoration: none; 
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Leichter Highlight-Effekt beim Hovern */
+}
+
+/* Der neue Bereich für den Willkommenstext */
+.hero-section {
+    text-align: center;
+    padding: 10px 10px; /* Eigener Abstand für den Text */
+}
+
+header {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 0; 
+    border-bottom: 5px solid var(--secondary-color);
+}
+header h1 {
+    padding-top: 0;
+}
+/* Zuerst: Verstecke die Checkbox und das Burger-Icon auf großen Bildschirmen */
+.menu-toggle,
+.menu-icon {
+    display: none;
+}
+/* Media Query: Diese Regeln gelten nur für Bildschirme, die 768px breit oder schmaler sind (iPads hochkant & Handys) */
+@media (max-width: 768px) {
+
+    /* Header-Container: Elemente jetzt untereinander anordnen */
+    .header-container {
+        flex-direction: column; /* Hauptrichtung ändern */
+        align-items: flex-start;  /* Alles linksbündig ausrichten */
+    }
+
+    /* Logo: Etwas mehr Platz nach unten geben */
+    .logo {
+        margin-bottom: 15px;
+    }
+/* Navbar: Nimmt die volle Breite ein und wird zum aufklappbaren Menü */
+    .navbar {
+        width: 100%;
+  /* Das Menü ist standardmäßig versteckt ( Höhe 0 und unsichtbar ) */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+    }
+/* Die Menüpunkte (ul) jetzt untereinander anordnen */
+    .navbar ul {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+    .navbar li {
+        margin-left: 0; /* Kein linker Abstand mehr */
+        width: 100%;
+    }
+    .navbar a {
+        display: block; /* Links nehmen die volle Breite ein */
+        padding: 15px 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    /* Burger-Icon sichtbar machen */
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        position: absolute; /* Positioniert es oben rechts im Header */
+        top: 35px;
+        right: 25px;
+        z-index: 10; /* Stellt sicher, dass es über anderen Elementen liegt */
+    }
+ /* Die drei Striche des Burger-Icons stylen */
+    .menu-icon span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--white);
+        margin: 5px 0;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+/* Magie: Wenn die Checkbox angehakt ist... */
+    .menu-toggle:checked ~ .navbar 
+ /* ...wird die Navbar sichtbar, indem sie ihre volle Höhe bekommt. */
+        max-height: 300px; /* Muss hoch genug sein für alle Menüpunkte */
+    }
+ /* Bonus: Die Striche des Burgers in ein "X" verwandeln, wenn das Menü offen ist */
+    .menu-toggle:checked ~ .menu-icon span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle:checked ~ .menu-icon span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle:checked ~ .menu-icon span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+footer {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    padding-top: 40px;
+    margin-top: 60px; /* Abstand zum Hauptinhalt */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Erlaubt den Spalten, auf Mobilgeräten umzubrechen */
+    gap: 20px; /* Abstand zwischen den Spalten */
+}
+
+.footer-column {
+    flex: 1; /* Jede Spalte versucht, gleich viel Platz einzunehmen */
+    min-width: 220px; /* Mindestbreite, bevor die Spalten umbrechen */
+}
+
+.footer-column h4 {
+    color: var(--white);
+    font-weight: 600;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: var(--background-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    border-top: 1px solid #495057; /* Etwas helleres Grau */
+    font-size: 0.9em;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color );
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; /* WICHTIG: Stellt sicher, dass Padding die Breite nicht beeinflusst */
+}
+
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 90, 156, 0.2);
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    background: var(--primary-color); /* Primärfarbe für die Aktion */
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.3em;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: transform 0.2s ease;
+}
+
+.submit-button:hover {
+    transform: scale(1.02);
+}
+/* Styling für Impressum & Datenschutz */
+.legal-content {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+}
+.legal-content h2 {
+    margin-top: 30px;
+}
+.auswahl-box {
+    background-color: var(--background-color);
+    border-left: 5px solid var(--secondary-color);
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    border-radius: 0 8px 8px 0;
+}
+.auswahl-box ul {
+    list-style-type: '✓ ';
+    padding-left: 20px;
+}
+/* ========================================= */
+/* NEU: Styling für die "Über Uns"-Seite     */
+/* ========================================= */
+.content-section {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Abstand zwischen Text und Bild */
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* Kehrt die Reihenfolge für den zweiten Block um */
+.content-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.text-block {
+    flex: 1; /* Nimmt den verfügbaren Platz ein */
+}
+
+.image-block {
+    flex: 1;
+}
+
+.image-block img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Responsive Anpassung für die "Über Uns"-Sektion */
+@media (max-width: 768px) {
+    .content-section,
+    .content-section.reverse {
+        flex-direction: column; /* Auf Mobilgeräten alles untereinander */
+    }
+}
+
+
