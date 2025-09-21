@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Backend Test-Seite</title>
+    <link rel="stylesheet" href="style.css"> <!-- Wir nutzen das gleiche Styling -->
+</head>
+<body>
+    <main style="max-width: 600px;">
+        <h1>Backend-Test für Digistore24-IPN</h1>
+        <p>
+            Diese Seite simuliert eine erfolgreiche Zahlung bei Digistore24. Fülle die Felder aus und klicke auf "Test-Zahlung senden".
+            Beobachte dann das Terminal deines Backends im Codespace.
+        </p>
+
+        <!-- 
+            WICHTIG: 
+            - action="/digistore-ipn" sendet die Daten an unsere Backend-Route.
+            - method="post" ist entscheidend, da unsere Route nur POST-Anfragen akzeptiert.
+        -->
+        <form action="/digistore-ipn" method="post">
+            <div class="form-group">
+                <label for="buyer_email">E-Mail des Käufers</label>
+                <input type="email" id="buyer_email" name="buyer_email" value="testkunde@email.com">
+            </div>
+            <div class="form-group">
+                <label for="buyer_first_name">Vorname</label>
+                <input type="text" id="buyer_first_name" name="buyer_first_name" value="Max">
+            </div>
+            <div class="form-group">
+                <label for="buyer_last_name">Nachname</label>
+                <input type="text" id="buyer_last_name" name="buyer_last_name" value="Mustermann">
+            </div>
+            <div class="form-group">
+                <label for="product_id">Produkt-ID</label>
+                <input type="text" id="product_id" name="product_id" value="42" readonly>
+            </div>
+             <div class="form-group">
+                <label for="order_id">Bestell-ID</label>
+                <input type="text" id="order_id" name="order_id" value="TEST12345">
+            </div>
+            
+            <button type="submit" class="submit-button">Test-Zahlung senden</button>
+        </form>
+    </main>
+</body>
+</html>
